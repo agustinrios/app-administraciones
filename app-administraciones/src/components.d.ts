@@ -5,28 +5,26 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
 export namespace Components {
-    interface AppHome {
+    interface AppAgencias {
     }
-    interface AppProfile {
-        "match": MatchResults;
+    interface AppHome {
     }
     interface AppRoot {
     }
 }
 declare global {
+    interface HTMLAppAgenciasElement extends Components.AppAgencias, HTMLStencilElement {
+    }
+    var HTMLAppAgenciasElement: {
+        prototype: HTMLAppAgenciasElement;
+        new (): HTMLAppAgenciasElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
-    };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
-    }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -35,22 +33,21 @@ declare global {
         new (): HTMLAppRootElement;
     };
     interface HTMLElementTagNameMap {
+        "app-agencias": HTMLAppAgenciasElement;
         "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppHome {
+    interface AppAgencias {
     }
-    interface AppProfile {
-        "match"?: MatchResults;
+    interface AppHome {
     }
     interface AppRoot {
     }
     interface IntrinsicElements {
+        "app-agencias": AppAgencias;
         "app-home": AppHome;
-        "app-profile": AppProfile;
         "app-root": AppRoot;
     }
 }
@@ -58,8 +55,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-agencias": LocalJSX.AppAgencias & JSXBase.HTMLAttributes<HTMLAppAgenciasElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }
     }
